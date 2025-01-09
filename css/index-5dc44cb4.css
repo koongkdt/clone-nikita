@@ -1,1 +1,376 @@
-:root{--primary: #ff3366;--background: #0a0a0a;--text: #ffffff}body{background:var(--background);color:var(--text);font-family:Fira Code,monospace;margin:0;padding:0;min-height:100vh}.navbar{display:flex;align-items:center;justify-content:space-between;padding:.5rem 2rem;background-color:#000000e6;border-bottom:1px solid var(--primary)}.logo-container{display:flex;align-items:center;gap:12px}.nikita-icon{width:40px;height:40px;border-radius:50%;border:2px solid rgba(255,51,102,.3)}.brand-name{font-size:1.8rem;font-weight:600;color:var(--primary);letter-spacing:2px}.nav-links{display:flex;align-items:center;gap:1.5rem}.nav-link{color:var(--text);text-decoration:none;transition:all .3s ease;font-size:.9rem;display:flex;align-items:center;gap:.5rem}.nav-link i{font-size:1rem}.nav-link:hover{color:var(--primary);text-shadow:0 0 8px var(--primary)}.glow-button{background:rgba(255,0,76,.9);color:#fff;display:flex;align-items:center;justify-content:center;padding:0 .8rem;border-radius:6px;font-size:.9rem;text-decoration:none;transition:all .3s ease}.glow-button:hover{background:rgba(255,0,76,1);box-shadow:0 0 15px #ff004c66;transform:translateY(-1px)}.glow-button i{margin-right:6px;font-size:1rem}.terminal-window{background:rgba(0,0,0,.8);margin:1rem auto;border-radius:8px;overflow:hidden;border:1px solid var(--primary);max-width:900px;width:90%}.terminal-content{padding:1.5rem;font-size:.95rem;line-height:1.6}.system-messages{color:var(--primary);margin-bottom:1.5rem}.command{color:#27c93f;margin:1rem 0}.command:before{content:">";color:var(--primary);margin-right:.5rem}.tweet{border-left:2px solid var(--primary);padding:1rem;margin-bottom:1rem;background:rgba(0,0,0,.3)}.tweet-content{margin:0;line-height:1.4;word-wrap:break-word}.tweet-date{color:var(--primary);font-size:.8rem;opacity:.8;margin-top:.5rem;display:block}@media screen and (max-width: 768px){.navbar{padding:.5rem 1rem}.logo-container{gap:8px}.nikita-icon{width:32px;height:32px}.brand-name{font-size:1.2rem}.nav-links{gap:8px}.nav-link span,.glow-button span{display:none}.nav-link,.glow-button{width:36px;height:36px;padding:0;display:flex;align-items:center;justify-content:center}.nav-link i,.glow-button i{margin:0;font-size:1.2rem}.terminal-window{width:95%;margin:.5rem auto}.terminal-content{padding:1rem;font-size:.9rem}.tweet{padding:.8rem}.terminal-button{padding:8px;font-size:.9rem}.roadmap .section-title{font-size:1rem;margin-top:1rem}.roadmap .section-content{padding-left:.5rem}.terminal-options{margin-top:.8rem;gap:6px}.executed-command{font-size:.9rem;margin-bottom:.8rem}}@media screen and (max-width: 480px){.navbar{padding:.5rem}.nav-links{gap:6px}.nav-link,.glow-button{width:32px;height:32px}.nav-link i,.glow-button i{font-size:1.1rem}.terminal-content{padding:.8rem;font-size:.85rem}.tweet{padding:.6rem}.terminal-button{padding:6px;font-size:.85rem}.roadmap .section-title{font-size:.95rem}.terminal-button.active:before{left:-15px}.terminal-options{margin-left:15px}}.fade-in{opacity:0;transform:translateY(10px);animation:fadeIn .5s ease forwards}@keyframes fadeIn{to{opacity:1;transform:translateY(0)}}.terminal-options{display:flex;flex-direction:column;gap:8px;margin-top:1rem}.terminal-button{background:transparent;border:none;color:var(--primary);padding:4px 8px;font-family:Fira Code,monospace;cursor:pointer;transition:all .3s ease;position:relative;text-align:left}.terminal-button.active{background:rgba(255,51,102,.1)}.terminal-button.active:before{content:">";position:absolute;left:-20px;color:var(--primary)}.executed-command{color:#27c93f;margin-bottom:1rem;font-family:Fira Code,monospace}.roadmap{white-space:pre-line;color:var(--text);line-height:1.6}.roadmap .section-title{color:var(--primary);font-weight:600;margin-top:1.5rem;margin-bottom:.5rem;font-size:1.1rem;border-bottom:1px solid rgba(255,51,102,.3);padding-bottom:.5rem;min-height:1.5rem}.roadmap .section-content{padding-left:1rem;margin-bottom:1rem}.roadmap .section-content p{margin:.3rem 0;min-height:1.2rem}.tweet-link{color:inherit;text-decoration:none;display:block}.tweet-link:hover{color:var(--primary)}@media (hover: none){.terminal-button:active{background:rgba(255,51,102,.1)}.tweet-link:active{color:var(--primary)}}.nav-link img{width:24px;height:24px;filter:brightness(0) invert(1)}
+:root {
+    --primary: #d40404;
+    --background: #0a0a0a;
+    --text: #ffffff
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: Fira Code, monospace;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5rem 2rem;
+    background-color: #000000e6;
+    border-bottom: 1px solid var(--primary)
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px
+}
+
+.nikita-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 51, 102, .3)
+}
+
+.brand-name {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary);
+    letter-spacing: 2px
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem
+}
+
+.nav-link {
+    color: var(--text);
+    text-decoration: none;
+    transition: all .3s ease;
+    font-size: .9rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem
+}
+
+.nav-link i {
+    font-size: 1rem
+}
+
+.nav-link:hover {
+    color: var(--primary);
+    text-shadow: 0 0 8px var(--primary)
+}
+
+.glow-button {
+    background: rgba(255, 0, 76, .9);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 .8rem;
+    border-radius: 6px;
+    font-size: .9rem;
+    text-decoration: none;
+    transition: all .3s ease
+}
+
+.glow-button:hover {
+    background: rgba(255, 0, 76, 1);
+    box-shadow: 0 0 15px #ff004c66;
+    transform: translateY(-1px)
+}
+
+.glow-button i {
+    margin-right: 6px;
+    font-size: 1rem
+}
+
+.terminal-window {
+    background: rgba(0, 0, 0, .8);
+    margin: 1rem auto;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--primary);
+    max-width: 900px;
+    width: 90%
+}
+
+.terminal-content {
+    padding: 1.5rem;
+    font-size: .95rem;
+    line-height: 1.6
+}
+
+.system-messages {
+    color: var(--primary);
+    margin-bottom: 1.5rem
+}
+
+.command {
+    color: #27c93f;
+    margin: 1rem 0
+}
+
+.command:before {
+    content: ">";
+    color: var(--primary);
+    margin-right: .5rem
+}
+
+.tweet {
+    border-left: 2px solid var(--primary);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: rgba(0, 0, 0, .3)
+}
+
+.tweet-content {
+    margin: 0;
+    line-height: 1.4;
+    word-wrap: break-word
+}
+
+.tweet-date {
+    color: var(--primary);
+    font-size: .8rem;
+    opacity: .8;
+    margin-top: .5rem;
+    display: block
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: .5rem 1rem
+    }
+
+    .logo-container {
+        gap: 8px
+    }
+
+    .nikita-icon {
+        width: 32px;
+        height: 32px
+    }
+
+    .brand-name {
+        font-size: 1.2rem
+    }
+
+    .nav-links {
+        gap: 8px
+    }
+
+    .nav-link span,
+    .glow-button span {
+        display: none
+    }
+
+    .nav-link,
+    .glow-button {
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center
+    }
+
+    .nav-link i,
+    .glow-button i {
+        margin: 0;
+        font-size: 1.2rem
+    }
+
+    .terminal-window {
+        width: 95%;
+        margin: .5rem auto
+    }
+
+    .terminal-content {
+        padding: 1rem;
+        font-size: .9rem
+    }
+
+    .tweet {
+        padding: .8rem
+    }
+
+    .terminal-button {
+        padding: 8px;
+        font-size: .9rem
+    }
+
+    .roadmap .section-title {
+        font-size: 1rem;
+        margin-top: 1rem
+    }
+
+    .roadmap .section-content {
+        padding-left: .5rem
+    }
+
+    .terminal-options {
+        margin-top: .8rem;
+        gap: 6px
+    }
+
+    .executed-command {
+        font-size: .9rem;
+        margin-bottom: .8rem
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: .5rem
+    }
+
+    .nav-links {
+        gap: 6px
+    }
+
+    .nav-link,
+    .glow-button {
+        width: 32px;
+        height: 32px
+    }
+
+    .nav-link i,
+    .glow-button i {
+        font-size: 1.1rem
+    }
+
+    .terminal-content {
+        padding: .8rem;
+        font-size: .85rem
+    }
+
+    .tweet {
+        padding: .6rem
+    }
+
+    .terminal-button {
+        padding: 6px;
+        font-size: .85rem
+    }
+
+    .roadmap .section-title {
+        font-size: .95rem
+    }
+
+    .terminal-button.active:before {
+        left: -15px
+    }
+
+    .terminal-options {
+        margin-left: 15px
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn .5s ease forwards
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+.terminal-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 1rem
+}
+
+.terminal-button {
+    background: transparent;
+    border: none;
+    color: var(--primary);
+    padding: 4px 8px;
+    font-family: Fira Code, monospace;
+    cursor: pointer;
+    transition: all .3s ease;
+    position: relative;
+    text-align: left
+}
+
+.terminal-button.active {
+    background: rgba(255, 51, 102, .1)
+}
+
+.terminal-button.active:before {
+    content: ">";
+    position: absolute;
+    left: -20px;
+    color: var(--primary)
+}
+
+.executed-command {
+    color: #27c93f;
+    margin-bottom: 1rem;
+    font-family: Fira Code, monospace
+}
+
+.roadmap {
+    white-space: pre-line;
+    color: var(--text);
+    line-height: 1.6
+}
+
+.roadmap .section-title {
+    color: var(--primary);
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: .5rem;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255, 51, 102, .3);
+    padding-bottom: .5rem;
+    min-height: 1.5rem
+}
+
+.roadmap .section-content {
+    padding-left: 1rem;
+    margin-bottom: 1rem
+}
+
+.roadmap .section-content p {
+    margin: .3rem 0;
+    min-height: 1.2rem
+}
+
+.tweet-link {
+    color: inherit;
+    text-decoration: none;
+    display: block
+}
+
+.tweet-link:hover {
+    color: var(--primary)
+}
+
+@media (hover: none) {
+    .terminal-button:active {
+        background: rgba(255, 51, 102, .1)
+    }
+
+    .tweet-link:active {
+        color: var(--primary)
+    }
+}
+
+.nav-link img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1)
+}
